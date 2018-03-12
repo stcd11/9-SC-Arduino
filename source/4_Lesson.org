@@ -1,0 +1,128 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+
+#+TITLE: Design Project
+#+AUTHOR: Stephen Brown and C. Delport
+
+#+BEGIN_HTML
+  <div class="github-fork-ribbon-wrapper left">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+    </div>
+  </div>
+<div id="stickyribbon">
+    <ul>
+      <li><a href="1_Lesson.html">Week 1</a></li>
+      <li><a href="2_Lesson.html">Week 2</a></li>
+      <li><a href="3_Lesson.html">Week 3</a></li>
+      <li><a href="4_Lesson.html">Week 4</a></li>
+      <li><a href="5_Lesson.html">Week 5</a></li>
+      <li><a href="6_Lesson.html">Week 6</a></li>
+      <li><a href="assessment.html">Assessment</a></li>
+    </ul>
+  </div>
+#+END_HTML
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+
+* Soldering
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Soldering stripboard isn't much harder than soldering a PCB. 
+- The fundamental technique remains the same as always: Heat up the board and the component leg with the tip of the iron, apply a small amount of solder, then remove the iron. 
+- Because your board consists of long thin strips, it can be easy to apply too much solder to the board, covering up other nearby holes you might need. It doesn't happen as often as you think it will, though!
+** Solder It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: make
+:END:
+- Once your teacher has approved your design start by obtaining a correctly sized piece of stripboard. We tend to use the 3-in-1 machine to trim to size. Your teacher can show you how to use this safely. 
+- In DIYlc, you are seeing your PCB from the component side, *NOT THE SOLDER SIDE*. Make sure you are aware of this before placing your components. *The components must go on the side with no tracks.*
+- Solder in your 330 Ohm resistors first. Ensure they're nice and flat to the board, and all the right value. Sometimes, resistors from other drawers get muddled up, so make sure you've got orange, orange, brown,  gold on all of yours. 
+- If you've got them all packed tightly together, you'll almost certainly find that the solder will clump togther on individual rows. This is fine. You've only got a problem if the solder forms a bridge from one row to the row above/below it. 
+- After the resistors, add the PP3 battery clip (remember to use your strain relief holes). You'll need to de-solder the black wire in a future lesson if you're going to keep the battery outside of the case, but don't worry about this now.  
+- Finally, add the LEDs. The + and - are marked by the legs, the long leg is positive (+) and the short leg is negative (-). *It is very important that these are correct.*   
+- Solder carefully, ensuring the LED leg is getting heated by the soldering iron as well as the copper board. Don't leave the iron on for too long or you'll burn out your LED. 
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+- - Test at 5V initially, to confifrm that your LEDs are both mounted the right way around. If you get alternate LEDs illuminating when you reverse the polarity of your power supply, you've gotten one soldered in backwards. While it might be tempteing, increasing the voltage beyond 9V will cause the LEDs to burn out within seconds.
+- *SAFETY NOTE:* These LEDs are very bright. Do not start directly into the light, and don't shine the LEDs into anyone else's eyes, as this will cause discomfort. 
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+- You will be assessed as follows:
+- *Silver:* Evidence of some stripboard soldering.
+- *Gold:* 1x Working LED with correct resistors.
+- *Platinum:* Neat, fully functioning PCB.
