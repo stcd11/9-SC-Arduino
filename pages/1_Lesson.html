@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Design Project</title>
+<title>Arduino</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -59,10 +59,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Design Project</h1>
+<h1 class="title">Arduino</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -78,11 +78,43 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> The Brief</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction - Getting connected</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Arduino is an open source physical computing platform based on a simple input/output (I/O) board and a development environment that implements the Processing language.
+</li>
+<li>Arduino can be used to develop standalone interactive objects or can be connected to software on your computer.
+</li>
+<li>The Adruino boards come in many different variations,
+</li>
+<li>Here are some examples:
+</li>
+<li>The Arduino Uno
+</li>
+</ul>
 
 <div class="figure">
-<p><img src="./img/lamps.jpg" alt="lamps.jpg" />
+<p><img src="./img/Arduino_uno.jpg" alt="Arduino_uno.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The Arduino nano (this is the one we will use).
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Arduino_nano.jpg" alt="Arduino_nano.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Like all microcontrollers, including the Genie microcontroller. All will have a pinout diagram, explain which pins will be connected to which input or output pins.
+</li>
+<li>Below is the pinout diagram for the Arduino Nano.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Nano_pinout.png" alt="Nano_pinout.png" />
 </p>
 </div>
 </div>
@@ -90,89 +122,174 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>In this project, you will design and create your own high-power LED light.
+<li>In this project, you will learn to code basic Arduino projects, called 'Sketches'. 
 </li>
-<li>Everything will be completely original, designed by you.
+<li>To do this you will need to use the Adruino IDE (Integrated Development Environment).
 </li>
-<li>You will need to combine your SolidWorks skills, circuit design, soldering and making abilities to produce a product which will potentially last for many years to come.
+<li>This can be found in the S&amp;C and Computing file on your desktop.
 </li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-2" class="outline-3 learn">
-<h3 id="sec-1-2">Learn It</h3>
-<div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>Since the dawn of time, people have benefitted from being able to see after the sun goes down. 
+<li>Once you have opened the Arduino file, you will see the program below.
 </li>
-<li>Wood fires gave way to oil lamps. The early 1800's saw the introduction of <a href="http://en.wikipedia.org/wiki/Gas_lighting">gas street lights</a>. The latter half of the 19th century saw the invention of the <a href="http://en.wikipedia.org/wiki/Incandescent_light_bulb">filament bulb</a> powered by electricity.
+<li>The program is divided into 3 main sections, 
+<ol class="org-ol">
+<li>The variable declaration section.
 </li>
-<li>More recently, <a href="http://en.wikipedia.org/wiki/Light-emitting_diode">LED</a> lighting is becoming more popular.
+<li>The setup section.
 </li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1-3" class="outline-3 try">
-<h3 id="sec-1-3">Try It</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li>Can you identify one reason why each of the lighting technologies names above was an improvement on its predecesor?
+<li>The loop section
+</li>
+</ol>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div id="outline-container-sec-2" class="outline-2 activity">
-<h2 id="sec-2"><span class="section-number-2">2</span> Design Specification</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-sec-2-1" class="outline-3 learn">
-<h3 id="sec-2-1">Learn It</h3>
-<div class="outline-text-3" id="text-2-1">
 
 <div class="figure">
-<p><img src="./img/1w_led.jpg" alt="1w_led.jpg" />
+<p><img src="./img/Arduino_start.jpg" alt="Arduino_start.jpg" />
 </p>
 </div>
 <ul class="org-ul">
-<li>Your light will use 2x 1W LEDs (shown above magified - they're about 3mm X 10mm x 10mm)
+<li>Variable declaration section. Another important choice that programmers face is where to declare variables. The specific place that variables are declared influences how various functions in a program will see the variable. This is called variable scope.
 </li>
-<li>The housing must be made from a combination of laser-cut 3mm MDF and 3mm translucent acrylic.
+<li>The setup() function/section is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The setup() function will only run once, after each powerup or reset of the Arduino board.
 </li>
-<li>To emphasise the compact nature of LED lighting, your unit should be as small as possible.
-<ul class="org-ul">
-<li>It's dimensions must not exceed 35mm X 80mm X 80mm (H x W x D)
-</li>
-</ul>
-</li>
-<li>The circuit must be built on <a href="http://en.wikipedia.org/wiki/Stripboard">Stripboard</a>.
-</li>
-<li>It should run from a 9V battery, and include a switch to turn the power on and off.
+<li>The loop() section. After creating a setup() function, which initializes and sets the initial values, the loop() function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond. Use it to actively control the Arduino board.
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-2-2" class="outline-3 badge">
-<h3 id="sec-2-2">Badge It</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Try It</h3>
+<div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>Sketch three ideas for the design of your housing. You can always make changes later, so don't fixate on details. This is about articulating your ideas!
+<li>You will first need to connect your Ardunio Nano to the computer and ensure it is setup correctly.
 </li>
-<li>To complete the badges you will need to click on the link at the bottom and complete the quiz. This will automatically badge your work.
-</li>
-<li><b><b>You will also need to upload photos of your actual drawings to the silver badge as evidence of your work.</b></b>
-</li>
-<li><b>You will need to be logged into <a href="http://www.bournetolearn.com">www.bournetolearn.com</a> to complete the badge.</b>
-</li>
-<li>Click on this link <a href="https://www.bournetolearn.com/quizzes/y9-indDesign/Lesson_1/">design quiz</a>
-<ul class="org-ul">
-<li><i>Silver:</i> Three designs drawn.
-</li>
-<li><i>Gold:</i> Includes an indication of dimensions.
-</li>
-<li><i>Platinum:</i> Includes colour/type of materials and specifies techniques (e.g. <a href="http://en.wikipedia.org/wiki/Finger_joint">finger joints</a>, type of glue) for making.
+<li>Connect the Arduino as shown below.
 </li>
 </ul>
+
+<div class="figure">
+<p><img src="./img/Arduino_connect.jpg" alt="Arduino_connect.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You then need to ensure the Adrunio is connected to your computer.
+</li>
+<li>Check the following options are correct.
+</li>
+<li>You are using the correct Arduino
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/arduino_select.jpg" alt="arduino_select.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Select the communications port (COM port)
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/comm.jpg" alt="comm.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Select the correct microcontroller type.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/processor.jpg" alt="processor.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You can click on upload button with a blank sketch to check if it is connected and everything will work.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/upload_button.jpg" alt="upload_button.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>When it has uploaded, it will say done uploading at the bottom of the IDE, you then know the Arduino is connected and working.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/done_uploading.jpg" alt="done_uploading.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You are now ready to start programming. 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 build">
+<h3 id="sec-1-3">Build It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>We are going connect an LED to one output and start programming.
+</li>
+<li>Connect the LED to output D2 as shown below.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Wiring_LED.jpg" alt="Wiring_LED.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Bring up the the Arduino IDe and we are going to start writing out first code.
+</li>
+<li>First we want to declare the intereger variable ledPin (or any name you want) in the variable declaration section.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/declare_pin.jpg" alt="declare_pin.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We then need to setup the pin D2 as an OUTPUT so the Arduino know to use this pin as an output.
+</li>
+<li>We declare it a ledPin as we have chosen to use as the variable name.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/output_declare.jpg" alt="output_declare.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now we need to add the code to get the LED to flash.
+</li>
+<li>This requires a code to turn the LED on and off as well as a delay between the on and off sequence.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Flashing_loop.jpg" alt="Flashing_loop.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Once you have written the code, you can click on the Upload button to and see if the program works.
+</li>
+</ul>
+<p>
+<img src="./img/upload_button.jpg" alt="upload_button.jpg" />
+<img src="./img/Done_uploading.jpg" alt="Done_uploading.jpg" />
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fZXh-TyE1Tw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3 badge">
+<h3 id="sec-1-4">Badge It</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Take a screenshot of you code and upload this to <a href="http://www.bournetolearn.com">www.bournetolearn.com</a>
+</li>
+<li>Take a photo of your breadboard and upload it to <a href="http://www.bournetolearn.com">www.bournetolearn.com</a>
 </li>
 </ul>
 </div>
