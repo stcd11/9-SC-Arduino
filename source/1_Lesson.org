@@ -91,7 +91,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Introduction - Getting connected
+* Introduction - Getting connected/LED control
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:

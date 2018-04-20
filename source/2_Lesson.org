@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Design Project
-#+AUTHOR: Stephen Brown and C. Delport
+#+TITLE: Arduino
+#+AUTHOR: C. Delport
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -91,11 +91,22 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* 3D CAD
+* PTM Control
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-[[./img/example.png]]
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+- We are going to now learn how to include digital control to your Arduino.
+- To do this, we will need to connect a PTM switch to your breadboard.
+- Look at the photo below to see how to wire the board.
+- You will need the following.
+ 1. 1 X PTM switch
+ 2. 1 X 10K resistor
+ 3. 2 X Red single core jump wire
+
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
