@@ -106,42 +106,52 @@
  1. 1 X PTM switch
  2. 1 X 10K resistor
  3. 2 X Red single core jump wire
+ 4. 1 X Black single core jump wire
 
-** Learn It
+- Before we can start wiring up the switch, we need to know how the switch is connected.
+- The switch is wired in 2 rows, when the button is pushed, all 4 pins are connected.
+[[./img/PTM_switch.jpg]]
+[[./img/PTM_wiring_diagram.png]]
+- The PTM switch needs to be connected across the gap in the centre of the breadboard.
+- It will only fit one way around as the pins are connected in a rectangle shape.
+- We are going use the input A5 for the switch. This will need a 10k pull down resistor and connection to power.
+- please note there is a black jump wire at the end of the board to connect groud to the bottom of the breadboard.
+[[./img/Switch_added.jpg]]
+- Below is the circuit diagram of how you would connect it is it was a Genie microcontroller.
+[[./img/CCT_diag_PTM.jpg]]
+** Code It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
+:HTML_CONTAINER_CLASS: code
 :END:
-- You'll need to design the parts of your housing in SolidWorks.
-- If you're not a confident SolidWorks user, these videos will walk you through building a quick letter rack using the basic design tools. 
+- We now need to start coding the switch to control the LED.
+- Open up your previous code for the LED.
+- First, we need to declare the following variables.
+ 1. int buttonPin = A5; // This declare which pin the button is connected to.\
+ 2. int buttonState = 0; // Set the state of the button to low/0
+[[./img/Switch_declare.jpg]]
+- Next we need to setup the button as an input.
+ 1. pinMode(buttonPin, INPUT); //This declares the button as an input on A5
+[[./img/setup_button_in.jpg]]
+- Now we need to add the instructions for the loop.
+- First we need to tell the microcontroller that the inout it is going to read is a digital input.
+ 1. buttonState = digitalRead(buttonPin); 
+- Next we need to instruct the micrcontroller to look at the state of the input. It will then decide using an if/else statement whether to turn on the output or turn off the output.
+ 2. if (buttonState == HIGH)
+ 3. digitalWrite(ledPin, HIGH); // Turn on the LED
+ 4. else
+ 5. digitalWrite(ledPin, LOW);  // Turn off LED
+[[./img/switch_loop.jpg]]
+- Now click the upload button with the Arduino connected.
+[[./img/done_uploading.jpg]]
+- Below is a video of how it should work.
 #+BEGIN_HTML
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pw2K8tAtLHs" frameborder="0" allowfullscreen></iframe>
-<br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YlpAn7Rvolc?list=PLjwXcI6i_ZJHFMidPPHUNImmMUon14GYg" frameborder="0" allowfullscreen></iframe>
-<br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HIr6I7O42rk?list=PLjwXcI6i_ZJHFMidPPHUNImmMUon14GYg" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uDR0eA7YrCU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 #+END_HTML
-** Design It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: design
-:END:
-- Design the housing for your light.
-- *The PCB:* Although you've not designed it yet, experience tells us that your circuit will be around 3mm X 25mm X 20mm (HxWxD). It's probably a good idea to design a small rectangular part this size, so that you can check later on that it'll fit inside your model. Don't worry about including holes to mount it yet (you can see some in my example at the top of the page) - we'll add these once you've designed your board.
-- *The Switch:* You'll want to use a small toggle switch to turn your light on and off. One of your side walls will need a hole with a 3mm radius (6mm diameter) in it for the switch to stick through. SolidWorks is a very popular program around the World, and many other engineers and designers have created detailed parts which they have shared with others. As it happens, you can download the switch you'll be using [[./T-Switch.SLDASM][here]] and insert it into your assembly. *TIP:* Once you insert the switch, make sure there will be some space for the wires to to PCB to go. You don't need a lot, but you don't want the back of the switch touching the PCB, for example.
-- *Power wires:* Are you going to store your battery inside the housing (more portable), or outside (for easy battery changing)? If you want it external, you'll want to include a 1.5mm radius hole somewhere on one of the side walls.
-#+BEGIN_HTML
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OZLrx9NN5Yo" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IGWfrjBgPzs" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KpscA_nC9GA" frameborder="0" allowfullscreen></iframe>
-#+END_HTML
-
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- To complete the badges you will need to click on the link at the bottom and complete the quiz. This will automatically badge your work.
-- *You will need to be logged into [[http://www.bournetolearn.com][www.bournetolearn.com]] to complete the badge.*
-- **You will also need to upload the screenshots of your mated parts, along with the quiz for this badge.**
-- Click on this link [[https://www.bournetolearn.com/quizzes/y9-indDesign/Lesson_2/][3D design]]
-- /Silver:/ Design and mate together at least two fully defined parts in an assembly.
-- /Gold:/ Include finger points in your assembled model parts.
-- /Platinum:/ Create a fully defined complete design.
+- To complete the badges you will need to Take a photo of your finished program *and* finished breadbaord.
+- /Silver:/ Upload a screenshot of your switch control sketch and a photo of your finished breadboard.
+- /Gold:/ Write a code to make the switch turn the LED on permanently and then off permanently each time you press the switch.
+- /Platinum:/ Write a sketch to allow the LED to flash continuously when the switch is pressed and then stop when the switch is pressed again.
