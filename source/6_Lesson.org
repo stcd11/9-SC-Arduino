@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Design Project
-#+AUTHOR: Stephen Brown and C. Delport
+#+TITLE: libraries and Examples
+#+AUTHOR: C. Delport
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -91,46 +91,73 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* Assembly
+* Libraries
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Switch it
+** Learn It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: build
+:HTML_CONTAINER_CLASS: learn
 :END:
-- With all your component parts, you can now assemble your finished product. Because of all your hard work, this will be a quick process. 
-[[./img/pwr_switch.png]]
-- The power switch needs to be wired up as per the diagram above. Cut the red wire on the PP3 battery cable about half-way along, and wire strip the two ends of the cut.
-- You can then remove the nut from the front of the switch, pass it through the 6mm hole you've made and put the nut back on to hole the switch in place. Tighten it *gently* with pliers while holding the back of the switch.
-- Solder one to the middle lug of the switch (there's a little hole in it to make this easier)
-- Solder the other end to either of the two remaining lugs. 
-[[./img/switch.jpg]]
-** Protect It
+- The Arduino environment can be extended through the use of libraries, just like most programming platforms. Libraries provide extra functionality for use in sketches, e.g. working with hardware or manipulating data. 
+- To use a library in a sketch, select it from Sketch > Include Library.
+[[./img/Libraries.jpg]] 
+- A number of libraries come installed with the IDE, but you can also download or create your own. 
+- See [[https://www.arduino.cc/en/Guide/Libraries][these instructions]] for details on installing libraries. 
+- There's also a [[https://www.arduino.cc/en/Hacking/LibraryTutorial][tutorial]] on writing your own libraries. 
+- See the [[https://www.arduino.cc/en/Reference/APIStyleGuide][API style guide]] for information on making a good Arduino-style API for your library.
+** Learn It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: build
+:HTML_CONTAINER_CLASS: learn
 :END:
-- Diodes only allow current to flow in /One Direction/. They also use up 0.7V of the available voltage in our circuit. This isn't much, but will reduce the amount of voltage going into your circuit and prevent it from getting hot.
-- Cut your black PP3 wire, and solder a rectifier diode in-line, with the gray band facing towards the PP3 battery snap. You can see mine resting on top of the switch in the picture above. 
-- Use spacers (cut them in half with side cutters to reduce their height) on top of the machine screws, then finally place your PCB on top and secure it into place *gently* with a pair of M3 nuts. 
-- Use PVA glue to stick MDF parts of your housing together.
-- Don't stick the lid down if you're going for an internal battery, otherwise you'll never be able to change it! 
-- PVA glue takes 24 hours to form a full-strength bond, but the body of your lamp should be fine to handle after about an hour. 
-** Mount It
+- The Arduino comes with a large number of libraries as standard in the Arduino IDE.
+  - EEPROM - reading and writing to "permanent" storage
+  - Ethernet / Ethernet 2 - for connecting to the internet using the Arduino Ethernet Shield, Arduino Ethernet Shield 2 and Arduino Leonardo ETH
+  - Firmata - for communicating with applications on the computer using a standard serial protocol.
+  - GSM - for connecting to a GSM/GRPS network with the GSM shield.
+  - LiquidCrystal - for controlling liquid crystal displays (LCDs)
+  - SD - for reading and writing SD cards
+  - Servo - for controlling servo motors
+  - SPI - for communicating with devices using the Serial Peripheral Interface (SPI) Bus
+  - SoftwareSerial - for serial communication on any digital pins. Version 1.0 and later of Arduino incorporate Mikal Hart's NewSoftSerial library as SoftwareSerial.
+  - Stepper - for controlling stepper motors
+  - TFT - for drawing text , images, and shapes on the Arduino TFT screen
+  - WiFi - for connecting to the internet using the Arduino WiFi shield
+  - Wire - Two Wire Interface (TWI/I2C) for sending and receiving data over a net of devices or sensors. The Matrix and Sprite libraries are no longer part of the core distribution.
+- There a many more independantly developed libraries which can be found online.
+
+* Examples
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: build
+:HTML_CONTAINER_CLASS: activity
 :END:
-- To avoid scratching your furniture at home, use the countersink tool on the bottom of your base before putting M3x20 countersunk machine screws in.
-[[./img/spacers.jpg]]
-- Use spacers (cut them in half with side cutters to reduce their height) on top of the machine screws, then finally place your PCB on top and secure it into place *gently* with a pair of M3 nuts. 
-- Use PVA glue to stick MDF parts of your housing together.
-- Don't stick the lid down if you're going for an internal battery, otherwise you'll never be able to change it! 
-- PVA glue takes 24 hours to form a full-strength bond, but the body of your lamp should be fine to handle after about an hour. 
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Built-in Examples are sketches included in the Arduino Software (IDE). 
+- To open them click on the toolbar menu: File > Examples.
+[[./img/Arduino_examples.jpg]] 
+- These simple programs demonstrate all basic Arduino commands. 
+- They span from a Sketch Bare Minimum to Digital and Analog IO, to the use of Sensors and Displays.
+- Click on [[https://www.arduino.cc/en/Tutorial/BuiltInExamples][this link]] to see all of the examples available for you to use. 
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- go to the **Button** example using the File > Examples menu.
+- Now try and edit the example to get your arduino to turn on an LED when you press the button.
+- If you have time, you can now start to try using the libraries and examples to develop your own great Arduino project.
+- Here are some excellent websites to look at to get some inspiration:
+  - [[http://www.instructables.com/technology/arduino/][Instructable Arduino]]
+  - [[https://www.thingiverse.com/][Thingiverse]]
+  - [[https://playground.arduino.cc/Projects/Ideas][Arduino Projects]]
+  - [[https://howtomechatronics.com/arduino-projects/][Home to mechanics]]
+  - [[https://circuitdigest.com/arduino-projects][Circuit Digest]]
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Take a photo of your finished product, and upload it.
-- /Silver:/ Assemble some aspects of product, but not finish.
-- /Gold:/ Produce a working LED lamp.
-- /Platinum:/ Free from excess glue, neat countersinks, good quality finish.
+- Take a screenshot of your updated *Button* code that you edited to work with your Arduino.
+- Upload the screenshot to [[https://bournetolearn.com/LoginForm.php][www.bournetolearn.com]]
+
+

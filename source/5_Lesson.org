@@ -112,9 +112,9 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- It is important to note that not all the ouput pins on the Arduino can be used as output pins. 
+- It is important to note that not all the output pins on the Arduino can be used as PWM output pins. 
 [[./img/Nano_PWM_symbol.png]]
-- We have been using Pin 2 as an ouput, but we will now need to use pin 3 as an output, so move the 330 ohm resistor and the LED to pin 3.
+- We have been using Pin 2 as an output, but we will now need to use pin 3 as a PWM output, so move the 330 ohm resistor and the LED to pin 3.
 [[./img/Moved_resistor.jpg]]
 - Lets now write a basic program to adjust the brightness of the LED using the POT.
 - This will use all of the skills you have previously learned.
