@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Design Project
-#+AUTHOR: Stephen Brown and C. Delport
+#+TITLE: Pulse Width Modulation (PWM)
+#+AUTHOR: C. Delport
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -91,30 +91,46 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-* The build-up
+* AnalogWrite
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Assemble It
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. 
+- Digital control is used to create a square wave, a signal switched between on and off. 
+- This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. 
+- The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. 
+- If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED.
+- This duration or period is the inverse of the PWM frequency. In other words, with Arduino's PWM frequency at about 500Hz, the green lines would measure 2 milliseconds each. 
+- A call to analogWrite() is on a scale of 0 - 255, such that analogWrite(255) requests a 100% duty cycle (always on), and analogWrite(127) is a 50% duty cycle (on half the time) for example.
+[[./img/PWM_example.jpg]]
+- You learned about PWM when you did the 555 Fan project in Year 8.
+** Build It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- You've now created a 3D model, and are the proud owner of a working LED light circuit. 
-- To finish, you'll need to build a cutting sheet from your 3D parts, laser cut them, stick them together and install your PCB. 
-- *To convert parts with no arches or curves, watch the video below.*
+- It is important to note that not all the ouput pins on the Arduino can be used as output pins. 
+[[./img/Nano_PWM_symbol.png]]
+- We have been using Pin 2 as an ouput, but we will now need to use pin 3 as an output, so move the 330 ohm resistor and the LED to pin 3.
+[[./img/Moved_resistor.jpg]]
+- Lets now write a basic program to adjust the brightness of the LED using the POT.
+- This will use all of the skills you have previously learned.
+- Start a new sketch and call it PWM.
+- Now write the following code into the sketch.
+- You will need t oknw the following Comparison Operators to understand this program.
+[[./img/Comparison_operators.jpg]]
+[[./img/PWM_code.jpg]]
+- The adjustment will be very sensitive, as can be seen in the video below.
 #+BEGIN_HTML
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G94wjQahZqU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lQ_ogDuPjfA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 #+END_HTML
-- *If your design has curves or arches in it, watch the video below.*
-#+BEGIN_HTML
-<iframe width="560" height="315" src="https://www.youtube.com/embed/e54Kv9vir3w" frameborder="0" allowfullscreen></iframe>
-#+END_HTML
-- Build your cutting sheet, packing all the parts as tightly together as possible. 
-- Remember to turn all the lines red, so that the laser cutter cuts through the material!
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- /Silver:/ Produce a cutting sheet with at least two parts on it
-- /Gold:/ Produce a full cutting sheet for your product
-- /Platinum:/ Produce a neat, tightly packed cutting sheet which minimizes waste.
+- /Silver:/ Complete the sample program and upload it to your Arduino. Take a screenshot of this and upload it to www.bournetolearn.com
+- /Gold:/ Have at least 5 different steps in the code to make the brightness change more progressively,  upload it to www.bournetolearn.com.
+- /Platinum:/ Have at least 15 different steps in the code to make the LED get brighter and dimmer very smoothly,  upload it to www.bournetolearn.com.

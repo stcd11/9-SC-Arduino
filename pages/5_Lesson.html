@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Design Project</title>
+<title>Pulse Width Modulation (PWM)</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -59,10 +59,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Design Project</h1>
+<h1 class="title">Pulse Width Modulation (PWM)</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -78,43 +78,92 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> The build-up</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> AnalogWrite</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-sec-1-1" class="outline-3 try">
-<h3 id="sec-1-1">Assemble It</h3>
+<div id="outline-container-sec-1-1" class="outline-3 learn">
+<h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>You've now created a 3D model, and are the proud owner of a working LED light circuit. 
+<li>Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. 
 </li>
-<li>To finish, you'll need to build a cutting sheet from your 3D parts, laser cut them, stick them together and install your PCB. 
+<li>Digital control is used to create a square wave, a signal switched between on and off. 
 </li>
-<li><b>To convert parts with no arches or curves, watch the video below.</b>
+<li>This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. 
+</li>
+<li>The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. 
+</li>
+<li>If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED.
+</li>
+<li>This duration or period is the inverse of the PWM frequency. In other words, with Arduino's PWM frequency at about 500Hz, the green lines would measure 2 milliseconds each. 
+</li>
+<li>A call to analogWrite() is on a scale of 0 - 255, such that analogWrite(255) requests a 100% duty cycle (always on), and analogWrite(127) is a 50% duty cycle (on half the time) for example.
 </li>
 </ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G94wjQahZqU" frameborder="0" allowfullscreen></iframe>
+
+<div class="figure">
+<p><img src="./img/PWM_example.jpg" alt="PWM_example.jpg" />
+</p>
+</div>
 <ul class="org-ul">
-<li><b>If your design has curves or arches in it, watch the video below.</b>
-</li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/e54Kv9vir3w" frameborder="0" allowfullscreen></iframe>
-<ul class="org-ul">
-<li>Build your cutting sheet, packing all the parts as tightly together as possible. 
-</li>
-<li>Remember to turn all the lines red, so that the laser cutter cuts through the material!
+<li>You learned about PWM when you did the 555 Fan project in Year 8.
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-2" class="outline-3 badge">
-<h3 id="sec-1-2">Badge It</h3>
+<div id="outline-container-sec-1-2" class="outline-3 try">
+<h3 id="sec-1-2">Build It</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li><i>Silver:</i> Produce a cutting sheet with at least two parts on it
+<li>It is important to note that not all the ouput pins on the Arduino can be used as output pins. 
 </li>
-<li><i>Gold:</i> Produce a full cutting sheet for your product
+</ul>
+
+<div class="figure">
+<p><img src="./img/Nano_PWM_symbol.png" alt="Nano_PWM_symbol.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>We have been using Pin 2 as an ouput, but we will now need to use pin 3 as an output, so move the 330 ohm resistor and the LED to pin 3.
 </li>
-<li><i>Platinum:</i> Produce a neat, tightly packed cutting sheet which minimizes waste.
+</ul>
+
+<div class="figure">
+<p><img src="./img/Moved_resistor.jpg" alt="Moved_resistor.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Lets now write a basic program to adjust the brightness of the LED using the POT.
+</li>
+<li>This will use all of the skills you have previously learned.
+</li>
+<li>Start a new sketch and call it PWM.
+</li>
+<li>Now write the following code into the sketch.
+</li>
+<li>You will need t oknw the following Comparison Operators to understand this program.
+</li>
+</ul>
+<p>
+<img src="./img/Comparison_operators.jpg" alt="Comparison_operators.jpg" />
+<img src="./img/PWM_code.jpg" alt="PWM_code.jpg" />
+</p>
+<ul class="org-ul">
+<li>The adjustment will be very sensitive, as can be seen in the video below.
+</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lQ_ogDuPjfA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3 badge">
+<h3 id="sec-1-3">Badge It</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><i>Silver:</i> Complete the sample program and upload it to your Arduino. Take a screenshot of this and upload it to www.bournetolearn.com
+</li>
+<li><i>Gold:</i> Have at least 5 different steps in the code to make the brightness change more progressively,  upload it to www.bournetolearn.com.
+</li>
+<li><i>Platinum:</i> Have at least 15 different steps in the code to make the LED get brighter and dimmer very smoothly,  upload it to www.bournetolearn.com.
 </li>
 </ul>
 </div>
