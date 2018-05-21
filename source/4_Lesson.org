@@ -138,4 +138,4 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Take a screeshot of your code and upload it to the badge task. *Make sure you include the bottom, where is state 'Done uploading'.*
+- Take a screeshot of your code and upload it to the badge task. *Make sure you include the bottom, where it states 'Done uploading'.*
