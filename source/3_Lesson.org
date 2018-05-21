@@ -5,13 +5,13 @@
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
 
-#+TITLE: Design Project
-#+AUTHOR: Stephen Brown and C. Delport
+#+TITLE: Multiple LED Control
+#+AUTHOR: C. Delport
 
 #+BEGIN_HTML
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -92,49 +92,32 @@
 :END:
 
 * Circuit Design
-[[./img/sboard.jpg]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
-** Learn It
+** Multiple Outputs
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- The LEDs you're going to use are /very/ bright, 1W models. 
-- They'll work with a good-quality 9V battery, but because LEDs have very low internal resistance, if connected directly to the battery they'll draw too much current, quickly overheat and burn out. 
-- To reduce the current flow, we'll use some 330 Ohm resistors connected in parallel, which will stop this from happening.
-- You're going to need to design a compact Stripboard circuit to take all the component parts. We use DIYlc for stripboard design in School. 
-- *Resource:* You can load DIYlc from the open drive in School, in the G:\Systems and Control\Student Home software\DIYlc\ folder. Double-click the 'diylc.exe' file to start.
-- *Resource:* At home, DIYlc is available for download [[https://code.google.com/p/diy-layout-creator/][here]].
+- The Arduino has multiple outputs, which can be used to control a variety of components. 
+- We will now get it to control 2 LEDs.
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Download [[./img/start_point.diy][this]] DIYlc file into your H: drive, and use File -> Open in DIYlc to open and view it. You can't just double-click on it.
-[[./img/sboard_task.png]]
-- This is an example of a stripboard circuit. A few important points have been picked out, which you might want to consider in your design.
-  - Strain relief holes only take a few seconds to drill, but will prevent your power wires from breaking off again and again.
-  - The legs on the 1W LEDs are a little over 1mm wide. If you don't enlarge the holes on your stripboard a little for them with a drill, they *will* snap off!
-  - 3mm holes in the PCB will allow you to poke M3 machine screws through them to secure the lights at the bottom of your housing. 
-  - The spot-face cut is to prevent the steel nuts we use from creating a short-circuit and burning out your LEDs. 
-- You are seeing the finished circuit from the component side (the side with no copper tracks on it). 
-- To make life a little easier, the tracks are also shown (as if you had X-ray vision). 
-[[./img/sboard_flow.png]]
-- Here you can see the path that electrons take through the circuit. Remember that the electrons are unable to jump over the thin gaps between the copper rows of stripboard. 
-- Electrons travel in from the red wire, arriving at the top row of the stripboard and attacted towards the negative end of the battery (black wire). 
-- As the only route they are presented with is to travel through the + leg of the LED, they pass through here and emerge at the bottom.
-- From here (the 4th row from the top), the only route the elctrons can take now is to travel through the parallel resistors, to the bottom row of the piece of stripboard.
-- Once at the bottom row, the electrons are able to travel up the black wire to the negative terminal of the battery, completing the circuit. 
+- First, you will need to connect another LED through a 330 ohm resistor as shown in the picture below.
+[[./img/Multiple_LED.jpg]]
+- Now we can write a program to get the LEDs to flash.
+- start a new sketch called MultipleLED and write the following code.
+[[./img/Multiple_code.jpg]]
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sH7ECeUSNMg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+#+END_HTML
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-[[./img/circuit.png]]
-- Using the file provided to you above, modify your design to add another resistor and another LED to create the circuit shown above. 
-- *Tip:* When inserted in stripboard, the LEDs occupy 3 columns and 4 rows.
-- *Tip:* You'll need to keep two 3mm holes to mount your PCB to the housing. Remember that creating a hole in a row of this size prevents current from travelling past that point in the row.
-- You will be awarded a badge for your work :
+- *Silver*, as per the example above, write the program to get the 2 LEDs to flash alternatively.
+- *Gold*, In the previous topic(lesson 2), you wrote a program to control the LED using a switch. Now write a program that will get the LEDs to flash when you are holding the switch down.
+- *Platinum*, Write a program to get the LEDs to flash when you momentarily push the switch and then stop when you momentarily push the switch again.
 
-   - /Silver:/ Additional components added to stripboard design.
-   - /Gold:/ Workable final design is 16x7 or under.
-   - /Platinum:/ Design is 13x6 or under.

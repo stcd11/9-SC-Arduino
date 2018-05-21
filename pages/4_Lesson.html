@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Design Project</title>
+<title>Analogue Input</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -59,10 +59,10 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Design Project</h1>
+<h1 class="title">Analogue Input</h1>
   <div class="github-fork-ribbon-wrapper left">
     <div class="github-fork-ribbon">
-      <a href="https://github.com/stcd11/9-SC-LED">Fork me on GitHub</a>
+      <a href="https://github.com/stcd11/9-SC-Arduino">Fork me on GitHub</a>
     </div>
   </div>
 <div id="stickyribbon">
@@ -77,39 +77,87 @@ for the JavaScript code in this tag.
     </ul>
   </div>
 <div id="outline-container-sec-1" class="outline-2 activity">
-<h2 id="sec-1"><span class="section-number-2">1</span> Soldering</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Analogue Inputs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 <div id="outline-container-sec-1-1" class="outline-3 learn">
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>Soldering stripboard isn't much harder than soldering a PCB. 
+<li>First we need to connect the potentiometer(POT) to the breadboard.
 </li>
-<li>The fundamental technique remains the same as always: Heat up the board and the component leg with the tip of the iron, apply a small amount of solder, then remove the iron. 
-</li>
-<li>Because your board consists of long thin strips, it can be easy to apply too much solder to the board, covering up other nearby holes you might need. It doesn't happen as often as you think it will, though!
+<li>You will need to bend the one leg of the POT back.
 </li>
 </ul>
+
+<div class="figure">
+<p><img src="./img/Bend_leg.jpg" alt="Bend_leg.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now remove the PTM switch.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Remove_switch.jpg" alt="Remove_switch.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now insert the POT just below where the switch was. <b>Check where the legs go for the switch.</b>
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/insert_pot_1.jpg" alt="insert_pot_1.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>It should finally look like this.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Pot_in_place.jpg" alt="Pot_in_place.jpg" />
+</p>
+</div>
 </div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3 make">
-<h3 id="sec-1-2">Solder It</h3>
+<h3 id="sec-1-2">Prepare Program</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>Once your teacher has approved your design start by obtaining a correctly sized piece of stripboard. We tend to use the 3-in-1 machine to trim to size. Your teacher can show you how to use this safely. 
+<li>You will now set up a program to monitor the Analogue input.
 </li>
-<li>In DIYlc, you are seeing your PCB from the component side, <b>NOT THE SOLDER SIDE</b>. Make sure you are aware of this before placing your components. <b>The components must go on the side with no tracks.</b>
+<li>To do this, we are going to use the serial monitor. 
 </li>
-<li>Solder in your 330 Ohm resistors first. Ensure they're nice and flat to the board, and all the right value. Sometimes, resistors from other drawers get muddled up, so make sure you've got orange, orange, brown,  gold on all of yours. 
+<li>The Arduino IDE has a feature that can be a great help in debugging sketches or controlling Arduino from your computer's keyboard. The Serial Monitor is a separate pop-up window that acts as a separate terminal that communicates by receiving and sending Serial Data.
 </li>
-<li>If you've got them all packed tightly together, you'll almost certainly find that the solder will clump togther on individual rows. This is fine. You've only got a problem if the solder forms a bridge from one row to the row above/below it. 
+<li>First, open a new Arduino sketch. Call it AnalogInputOnly.
 </li>
-<li>After the resistors, add the PP3 battery clip (remember to use your strain relief holes). You'll need to de-solder the black wire in a future lesson if you're going to keep the battery outside of the case, but don't worry about this now.  
+<li>Then write the following code to it and download the program to your Arduino.
 </li>
-<li>Finally, add the LEDs. The + and - are marked by the legs, the long leg is positive (+) and the short leg is negative (-). <b>It is very important that these are correct.</b>   
+<li>Once downloaded, you can click on the serial monitor button in the top right had corner and monitor the POT by turning it clockwise and anti-clockwise.
 </li>
-<li>Solder carefully, ensuring the LED leg is getting heated by the soldering iron as well as the copper board. Don't leave the iron on for too long or you'll burn out your LED. 
+</ul>
+
+<div class="figure">
+<p><img src="./img/serial_monitor.jpg" alt="serial_monitor.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Make sure the Baud rate is set to 9600, as it is set up in your program.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Baud_rate.jpg" alt="Baud_rate.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>You will now be able to see the value change as you adjust your POT between 0-1023.
+</li>
+<li>The Genie microcontroller can set a value between 0-255. 
 </li>
 </ul>
 </div>
@@ -118,24 +166,33 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-3">Test It</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>- Test at 5V initially, to confifrm that your LEDs are both mounted the right way around. If you get alternate LEDs illuminating when you reverse the polarity of your power supply, you've gotten one soldered in backwards. While it might be tempteing, increasing the voltage beyond 9V will cause the LEDs to burn out within seconds.
+<li>Lets now write a program to control the LED when the POT is turned to a certain position.
 </li>
-<li><b>SAFETY NOTE:</b> These LEDs are very bright. Do not start directly into the light, and don't shine the LEDs into anyone else's eyes, as this will cause discomfort. 
+<li>If your LED was removed, replace it as it was previously in the breadboard.
 </li>
 </ul>
+
+<div class="figure">
+<p><img src="./img/Replace_LED.JPG" alt="Replace_LED.JPG" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Now start a new sketch called AnalogInput and  write the following program.
+</li>
+</ul>
+
+<div class="figure">
+<p><img src="./img/Analogue_switch_control.png" alt="Analogue_switch_control.png" />
+</p>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CYj1W5VS7p4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 </div>
 <div id="outline-container-sec-1-4" class="outline-3 badge">
 <h3 id="sec-1-4">Badge It</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li>You will be assessed as follows:
-</li>
-<li><b>Silver:</b> Evidence of some stripboard soldering.
-</li>
-<li><b>Gold:</b> 1x Working LED with correct resistors.
-</li>
-<li><b>Platinum:</b> Neat, fully functioning PCB.
+<li>Take a screeshot of your code and upload it to the badge task. <b>Make sure you include the bottom, where is state 'Done uploading'.</b>
 </li>
 </ul>
 </div>
