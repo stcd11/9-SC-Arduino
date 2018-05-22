@@ -124,7 +124,7 @@
   - TFT - for drawing text , images, and shapes on the Arduino TFT screen
   - WiFi - for connecting to the internet using the Arduino WiFi shield
   - Wire - Two Wire Interface (TWI/I2C) for sending and receiving data over a net of devices or sensors. The Matrix and Sprite libraries are no longer part of the core distribution.
-- There a many more independantly developed libraries which can be found online.
+- There a many more independently developed libraries which can be found online.
 
 * Examples
 :PROPERTIES:
@@ -144,7 +144,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- go to the **Button** example using the File > Examples menu.
+- Go to the **Button** example using the File > Examples menu.
 - Now try and edit the example to get your arduino to turn on an LED when you press the button.
 - If you have time, you can now start to try using the libraries and examples to develop your own great Arduino project.
 - Here are some excellent websites to look at to get some inspiration:

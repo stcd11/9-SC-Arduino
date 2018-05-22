@@ -97,7 +97,7 @@
 :END:
 - Arduino is an open source physical computing platform based on a simple input/output (I/O) board and a development environment that implements the Processing language.
 - Arduino can be used to develop standalone interactive objects or can be connected to software on your computer.
-- The Adruino boards come in many different variations,
+- The Arduino boards come in many different variations,
 - Here are some examples:
 - The Arduino Uno
 [[./img/Arduino_uno.jpg]]
@@ -111,6 +111,7 @@
 :HTML_CONTAINER_CLASS: learn
 :END:
 - In this project, you will learn to code basic Arduino projects, called 'Sketches'. 
+- You can download the Arduino IDE by clicking on [[https://www.arduino.cc/en/Main/Software][this link]].
 - To do this you will need to use the Adruino IDE (Integrated Development Environment).
 - This can be found in the S&C and Computing file on your desktop.
 - Once you have opened the Arduino file, you will see the program below.
@@ -126,10 +127,10 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- You will first need to connect your Ardunio Nano to the computer and ensure it is setup correctly.
+- You will first need to connect your Arduino Nano to the computer and ensure it is setup correctly.
 - Connect the Arduino as shown below.
 [[./img/Arduino_connect.jpg]]
-- You then need to ensure the Adrunio is connected to your computer.
+- You then need to ensure the Arduino is connected to your computer.
 - Check the following options are correct.
 - You are using the correct Arduino
 [[./img/arduino_select.jpg]]
@@ -149,7 +150,7 @@
 - We are going connect an LED to one output and start programming.
 - Connect the LED to output D2 as shown below.
 [[./img/Wiring_LED.jpg]]
-- Bring up the the Arduino IDe and we are going to start writing out first code.
+- Bring up the the Arduino IDE and we are going to start writing out first code.
 - First we want to declare the intereger variable ledPin (or any name you want) in the variable declaration section.
 [[./img/declare_pin.jpg]]
 - We then need to setup the pin D2 as an OUTPUT so the Arduino know to use this pin as an output.

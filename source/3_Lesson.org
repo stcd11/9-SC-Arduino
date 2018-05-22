@@ -108,7 +108,7 @@
 - First, you will need to connect another LED through a 330 ohm resistor as shown in the picture below.
 [[./img/Multiple_LED.jpg]]
 - Now we can write a program to get the LEDs to flash.
-- start a new sketch called MultipleLED and write the following code.
+- Start a new sketch called MultipleLED and write the following code.
 [[./img/Multiple_code.jpg]]
 #+BEGIN_HTML
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sH7ECeUSNMg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

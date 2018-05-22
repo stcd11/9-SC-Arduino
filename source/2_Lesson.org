@@ -115,7 +115,7 @@
 - The PTM switch needs to be connected across the gap in the centre of the breadboard.
 - It will only fit one way around as the pins are connected in a rectangle shape.
 - We are going use the input A5 for the switch. This will need a 10k pull down resistor and connection to power.
-- please note there is a black jump wire at the end of the board to connect groud to the bottom of the breadboard.
+- Please note there is a black jump wire at the end of the board to connect ground to the bottom of the breadboard.
 [[./img/Switch_added.jpg]]
 - Below is the circuit diagram of how you would connect it is it was a Genie microcontroller.
 [[./img/CCT_diag_PTM.jpg]]
@@ -133,7 +133,7 @@
  1. pinMode(buttonPin, INPUT); //This declares the button as an input on A5
 [[./img/setup_button_in.jpg]]
 - Now we need to add the instructions for the loop.
-- First we need to tell the microcontroller that the inout it is going to read is a digital input.
+- First we need to tell the microcontroller that the input it is going to read is a digital input.
  1. buttonState = digitalRead(buttonPin); 
 - Next we need to instruct the micrcontroller to look at the state of the input. It will then decide using an if/else statement whether to turn on the output or turn off the output.
  2. if (buttonState == HIGH)
@@ -151,7 +151,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- To complete the badges you will need to Take a photo of your finished program *and* finished breadbaord.
+- To complete the badges you will need to Take a photo of your finished program *and* finished breadboard.
 - /Silver:/ Upload a screenshot of your switch control sketch and a photo of your finished breadboard.
 - /Gold:/ Write a code to make the switch turn the LED on permanently and then off permanently each time you press the switch.
 - /Platinum:/ Write a sketch to allow the LED to flash continuously when the switch is pressed and then stop when the switch is pressed again.
