@@ -153,5 +153,5 @@
 :END:
 - To complete the badges you will need to Take a photo of your finished program *and* finished breadboard.
 - /Silver:/ Upload a screenshot of your switch control sketch and a photo of your finished breadboard.
-- /Gold:/ Write a code to make the switch turn the LED on permanently and then off permanently each time you press the switch.
-- /Platinum:/ Write a sketch to allow the LED to flash continuously when the switch is pressed and then stop when the switch is pressed again.
+- /Gold:/ Write a sketch to allow the LED to flash continuously when the switch is pressed and then stop when the switch is pressed again.
+- /Platinum:/ Write a code to make the switch turn the LED on permanently and then off permanently each time you press the switch.
