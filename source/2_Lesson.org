@@ -110,7 +110,7 @@
 
 - Before we can start wiring up the switch, we need to know how the switch is connected.
 - The switch is wired in 2 rows, when the button is pushed, all 4 pins are connected.
-[[./img/PTM_switch.jpg]]
+[[./img/PTM_switch1.jpg]]
 [[./img/PTM_wiring_diagram.png]]
 - The PTM switch needs to be connected across the gap in the centre of the breadboard.
 - It will only fit one way around as the pins are connected in a rectangle shape.
